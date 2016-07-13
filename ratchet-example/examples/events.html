@@ -19,6 +19,7 @@
 
     <!-- Include the compiled Ratchet JS -->
     <script src="../js/ratchet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body>
         <!-- Make sure all your bars are the first things in your <body> -->
@@ -29,31 +30,78 @@
         </center>
       </header>
       <!-- Display event image --->
-    <div class="slider" id="mySlider">
-      <div class="slide-group">
-        <div class="slide">
-          <img src="../img/slide01.jpg" width="300" height="667">
-          <span class="slide-text">
-            <span class="icon icon-left-nav"></span>
-            Register
-          </span>
+     <div class="content">
+
+      <!-- Note: For this slider example, you'll need some additional styles not included with Ratchet -->
+      <style>
+
+        .slider .slide img {
+          display: block;
+          width: 100%;
+          height: 570px;
+          background-color:white;
+        }
+
+        .slider .slide-group .slide-text {
+          position: absolute;
+          top: 45%;
+          left: 0;
+          width: 100%;
+          font-size: 24px;
+          color: #fff;
+          text-align: center;
+          text-shadow: 0 0 10px rgba(0,0,0,.5);
+        }
+          
+        hr {
+        border: none;
+        height: 5px;
+        /* Set the hr color */
+        color: orange; /* old IE */
+        background-color: orange; /* Modern Browsers */
+        }
+      </style>
+     
+        <center>
+            <a id="link1" href ="https://www.google.com.sg/">
+            <img id="event1" src="../img/slide01.jpg" height="570" width="90%" border="5">
+            </a>
+            <br>
+            <hr>
+            <br>
+            <a id="link2" href ="https://www.google.com.sg/">
+            <img id="event2" src="../img/slide01.jpg" height="570" width="90%" border="5">
+            </a>
+            <br>
+            <hr>
+            <br>
+            <a id="link3" href ="https://www.google.com.sg/">
+            <img id="event3" src="../img/slide01.jpg" height="570" width="90%" border="5">
+            </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+         </center>
         </div>
-        <div class="slide">
-          <img src="../img/slide02.jpg" width="300" height="667" >
-            <span class="slide-text">
-            <span class="icon icon-left-nav"></span>
-            Register
-          </span>
-        </div>
-        <div class="slide">
-          <img src="../img/slide03.jpg" width="300" height="667">
-            <span class="slide-text">
-            <span class="icon icon-left-nav"></span>
-            Register
-          </span>
-        </div>
-      </div>
-    </div>
+    <!--- Update Event images and Register links ---->
+    <script> 
+    $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
+    console.log(data.feed.entry[4].content.$t);
+    
+    document.getElementById('event1').src=data.feed.entry[4].title.$t;
+    document.getElementById('event2').src=data.feed.entry[5].title.$t;
+    document.getElementById('event3').src=data.feed.entry[6].title.$t;
+    
+    document.getElementById('link1').href=data.feed.entry[4].content.$t.substring(7);
+    document.getElementById('link2').href=data.feed.entry[5].content.$t.substring(7);
+    document.getElementById('link3').href=data.feed.entry[6].content.$t.substring(7);
+    });
+    </script>
+    <!---End Update Event images and Register links ---->
     <!----------------Footer nav Bar--->
       <nav class="bar bar-tab">
           <a class="tab-item" href="../index.html">
@@ -64,7 +112,7 @@
             <span class="icon icon-person"></span>
             <span class="tab-label">Emergency</span>
           </a>
-          <a class="tab-item " href="#">
+          <a class="tab-item active" href="#">
             <span class="icon icon-star-filled"></span>
             <span class="tab-label">Events</span>
           </a>
