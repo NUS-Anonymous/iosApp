@@ -12,13 +12,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <!-- Include the compiled Ratchet CSS -->
-    <link href="../css/ratchet.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ratchet.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- Optionally, include either the iOS or Android theme -->
-    <link href="../css/ratchet-theme-ios.css" rel="stylesheet">
+    <link href="./css/ratchet-theme-ios.css" rel="stylesheet">
 
     <!-- Include the compiled Ratchet JS -->
-    <script src="../js/ratchet.js"></script>
+    <script src="./js/ratchet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body>
@@ -38,7 +38,7 @@
         .slider .slide img {
           display: block;
           width: 100%;
-          height: 570px;
+          height: 100%;
           background-color:white;
         }
 
@@ -61,32 +61,32 @@
         background-color: orange; /* Modern Browsers */
         }
       </style>
-     
-        <center>
+      <div class="slider">
+        <div class="slide-group">
+          <div class="slide">
             <a id="link1" href ="https://www.google.com.sg/">
-            <img id="event1" src="../img/slide01.jpg" height="570" width="90%" border="5">
+            <img id="event1" src="./img/Loading.gif" height="570" width="90%" border="5">
             </a>
-            <br>
-            <hr>
-            <br>
+            <span class="slide-text">
+              <span class="icon icon-left-nav"></span>
+                Slide me
+            </span>
+          </div>
+          <div class="slide">
             <a id="link2" href ="https://www.google.com.sg/">
-            <img id="event2" src="../img/slide01.jpg" height="570" width="90%" border="5">
-            </a>
-            <br>
-            <hr>
-            <br>
+            <img id="event2" src="./img/Loading.gif" height="570" width="90%" border="5">
+              </a>
+            <span class="slide-text">
+             
+            </span>
+          </div>
+          <div class="slide">
             <a id="link3" href ="https://www.google.com.sg/">
-            <img id="event3" src="../img/slide01.jpg" height="570" width="90%" border="5">
-            </a>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            
-         </center>
+            <img id="event3" src="./img/Loading.gif" height="570" width="90%" border="5">
+              </a>
+          </div>
         </div>
+      </div>
     <!--- Update Event images and Register links ---->
     <script> 
     $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
@@ -104,11 +104,11 @@
     <!---End Update Event images and Register links ---->
     <!----------------Footer nav Bar--->
       <nav class="bar bar-tab">
-          <a class="tab-item" href="./index.html" data-ignore="push">
+          <a class="tab-item" href="index.html" data-ignore="push">
             <span class="icon icon-home"></span>
             <span class="tab-label">RA on DUTY</span>
           </a>
-          <a class="tab-item" href="./emergency.html" data-ignore="push">
+          <a class="tab-item" href="emergency.html" data-ignore="push">
             <span class="icon icon-person"></span>
             <span class="tab-label">Emergency</span>
           </a>
