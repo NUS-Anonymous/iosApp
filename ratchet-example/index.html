@@ -64,7 +64,6 @@
     //Only run if twitter-widget exists on page
     var checkPage = function(){
     //Only run if twitter-widget exists on page
-    alert(window.location);
    if ((window.location).indexOf('index') > -1){
       alert("index"); $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
             var x = document.getElementById("myTable").rows[0].cells;
