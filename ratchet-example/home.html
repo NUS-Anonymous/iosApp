@@ -19,68 +19,54 @@
 
     <!-- Include the compiled Ratchet JS -->
     <script src="./js/ratchet.js"></script>
+    <script src="./js/jquery.min.js"></script>
   </head>
   <body>
-        <!-- Make sure all your bars are the first things in your <body> -->
+
+    <!-- Make sure all your bars are the first things in your <body> -->
     <header class="bar bar-nav">
-      <a class="icon icon-person pull-right"></a>
+      <a class="icon icon-gear pull-right" href="#"></a>
         <center>
-            <h1 class="title">Emergency</h1>
+            <h1 class="title">UTown Residence</h1>
         </center>
     </header>
+    
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
       <div class="content-padded">
-            <table class="table">
+          
+          <center>
+          <h1>RA on Duty</h1>
+          </center>
+          <br>
+            <table id="myTable" class="table">
             <thead>
               <tr class="success">
-                <th>Fire & Ambulance</th>
-                <th>995</th>
+                <th>RA</th>
+                <th>Number</th>
               </tr>
             </thead>
             <tbody>
               <tr class="danger">
-                <th>Police</th>
-                <th>999</th>
+                <th>RA</th>
+                <th>Number</th>
               </tr>
               <tr class="success">
-                <th>Police</th>
-                <th>999</th>
-              </tr>
-              <tr class="danger">
-                <th>Campus Security</th>
-                <th>6874 1616</th>
-              </tr>
-              <tr class="success">
-                <th>NUH</th>
-                <th>6779 5555</th>
-              </tr>
-                <tr class="danger">
-                <th>Maintenance UTR</th>
-                <th>6516 1515</th>
-              </tr>
-              <tr class="success">
-                <th>IT Care</th>
-                <th>6516 2080</th>
-              </tr>
-              <tr class="danger">
-                <th>UTR Mailbox</th>
-                <th>utr@nus.edu.sg</th>
-              </tr>
-              <tr class="success">
-                <th>Lock Out</th>
-                <th>9138 5713</th>
+                <th>RA</th>
+                <th>Number</th>
               </tr>
             </tbody>
           </table>
       </div>
     </div>
-    <!----------------Footer nav Bar--->
-      <nav class="bar bar-tab">
-          <a class="tab-item" href="index.html" >
+    
+      <!----------------Footer nav Bar--->
+        <nav class="bar bar-tab">
+          <a class="tab-item active" href="#" >
             <span class="icon icon-home"></span>
             <span class="tab-label">RA on DUTY</span>
           </a>
-          <a class="tab-item active" href="#" >
+          <a class="tab-item" href="index.html" >
             <span class="icon icon-person"></span>
             <span class="tab-label">Emergency</span>
           </a>
@@ -89,4 +75,7 @@
             <span class="tab-label">Events</span>
           </a>
       </nav>
-</body>
+    </body>
+    
+    <!-- Nav Button ----->
+</html>
