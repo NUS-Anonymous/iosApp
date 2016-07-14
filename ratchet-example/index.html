@@ -19,7 +19,7 @@
 
     <!-- Include the compiled Ratchet JS -->
     <script src="./js/ratchet.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
   </head>
   <body>
 
@@ -60,11 +60,8 @@
       </div>
     </div>
     <script>
-      
-    //Only run if twitter-widget exists on page
     var checkPage = function(){
-    //Only run if twitter-widget exists on page
-    $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
+ $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
             var x = document.getElementById("myTable").rows[0].cells;
             x[0].innerHTML = data.feed.entry[0].title.$t;
 
@@ -83,9 +80,8 @@
             var x = document.getElementById("myTable").rows[2].cells;
             x[1].innerHTML = data.feed.entry[2].content.$t.substring(7);
             });
-    
-        
-    $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
+
+ $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
             console.log(data.feed.entry[4].content.$t);
             document.getElementById('event1').src=data.feed.entry[4].title.$t;
             document.getElementById('event2').src=data.feed.entry[5].title.$t;
@@ -94,41 +90,6 @@
             document.getElementById('link2').href=data.feed.entry[5].content.$t.substring(7);
             document.getElementById('link3').href=data.feed.entry[6].content.$t.substring(7);
             });
-        
-        
-   if ((window.location).indexOf('index') > -1){
-      alert("index"); $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
-            var x = document.getElementById("myTable").rows[0].cells;
-            x[0].innerHTML = data.feed.entry[0].title.$t;
-
-            var x = document.getElementById("myTable").rows[0].cells;
-            x[1].innerHTML = data.feed.entry[0].content.$t.substring(7);
-
-            var x = document.getElementById("myTable").rows[1].cells;
-            x[0].innerHTML = data.feed.entry[1].title.$t;
-
-            var x = document.getElementById("myTable").rows[1].cells;
-            x[1].innerHTML = data.feed.entry[1].content.$t.substring(7);
-
-            var x = document.getElementById("myTable").rows[2].cells;
-            x[0].innerHTML = data.feed.entry[2].title.$t;
-
-            var x = document.getElementById("myTable").rows[2].cells;
-            x[1].innerHTML = data.feed.entry[2].content.$t.substring(7);
-            });
-   }
-    if ((window.location).indexOf('events') > -1){
-      alert("events"); $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
-            console.log(data.feed.entry[4].content.$t);
-            document.getElementById('event1').src=data.feed.entry[4].title.$t;
-            document.getElementById('event2').src=data.feed.entry[5].title.$t;
-            document.getElementById('event3').src=data.feed.entry[6].title.$t;
-            document.getElementById('link1').href=data.feed.entry[4].content.$t.substring(7);
-            document.getElementById('link2').href=data.feed.entry[5].content.$t.substring(7);
-            document.getElementById('link3').href=data.feed.entry[6].content.$t.substring(7);
-            });
-    }
-
     
 };
 
