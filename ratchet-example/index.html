@@ -29,47 +29,49 @@
             <h1 class="title">Emergency</h1>
         </center>
     </header>
+     <style>
+        th {
+            font-size: 160%;
+        }  
+      
+    </style>
     <div class="content">
       <div class="content-padded">
             <table class="table">
             <thead>
               <tr class="success">
                 <th>Fire & Ambulance</th>
-                <th>995</th>
+                  <th><a href="tel:+65995">995</a></th>
               </tr>
             </thead>
             <tbody>
               <tr class="danger">
                 <th>Police</th>
-                <th>999</th>
+                  <th><a href="tel:+65999">999</a></th>
               </tr>
               <tr class="success">
-                <th>Police</th>
-                <th>999</th>
-              </tr>
-              <tr class="danger">
                 <th>Campus Security</th>
-                <th>6874 1616</th>
-              </tr>
-              <tr class="success">
-                <th>NUH</th>
-                <th>6779 5555</th>
-              </tr>
-                <tr class="danger">
-                <th>Maintenance UTR</th>
-                <th>6516 1515</th>
-              </tr>
-              <tr class="success">
-                <th>IT Care</th>
-                <th>6516 2080</th>
+                  <th><a href="tel:+6568741616">6874 1616</a></th>
               </tr>
               <tr class="danger">
-                <th>UTR Mailbox</th>
-                <th>utr@nus.edu.sg</th>
+                <th>NUH</th>
+                  <th><a href="tel:+6567795555">6779 5555</a></th>
+              </tr>
+                <tr class="success">
+                <th>Maintenance UTR</th>
+                    <th><a href="tel:+6565161515">6516 1515</a></th>
+              </tr>
+              <tr class="danger">
+                <th>IT Care</th>
+                  <th><a href="tel:+6565162080">6516 2080</a></th>
               </tr>
               <tr class="success">
+                <th>UTR Mailbox</th>
+                  <th><a href="mailto:utr@nus.edu.sg">utr@nus.edu.sg</a></th>
+              </tr>
+              <tr class="danger">
                 <th>Lock Out</th>
-                <th>9138 5713</th>
+                  <th><a href="tel:+6591385713">9138 5713</a></th>
               </tr>
             </tbody>
           </table>
@@ -82,19 +84,25 @@
             x[0].innerHTML = data.feed.entry[0].title.$t;
 
             var x = document.getElementById("myTable").rows[0].cells;
-            x[1].innerHTML = data.feed.entry[0].content.$t.substring(7);
+            var a = (x[1].innerHTML).replace("Loading...", 	data.feed.entry[0].content.$t.substring(7));
+            a = a.replace("00000000",data.feed.entry[0].content.$t.substring(7));
+            x[1].innerHTML  = a;
 
             var x = document.getElementById("myTable").rows[1].cells;
             x[0].innerHTML = data.feed.entry[1].title.$t;
 
             var x = document.getElementById("myTable").rows[1].cells;
-            x[1].innerHTML = data.feed.entry[1].content.$t.substring(7);
+            var a = (x[1].innerHTML).replace("Loading...", 	data.feed.entry[1].content.$t.substring(7));
+            a = a.replace("00000000",data.feed.entry[1].content.$t.substring(7));
+            x[1].innerHTML  = a;
 
             var x = document.getElementById("myTable").rows[2].cells;
             x[0].innerHTML = data.feed.entry[2].title.$t;
 
             var x = document.getElementById("myTable").rows[2].cells;
-            x[1].innerHTML = data.feed.entry[2].content.$t.substring(7);
+            var a = (x[1].innerHTML).replace("Loading...", 	data.feed.entry[2].content.$t.substring(7));
+            a = a.replace("00000000",data.feed.entry[2].content.$t.substring(7));
+            x[1].innerHTML  = a;
             });
 
  $.getJSON('https://spreadsheets.google.com/feeds/list/1ArLl6iQwXIBZ9J1DNnGSqLb8BqE0chjT5RdClpY1VvM/od6/public/basic?alt=json', function(data) {
