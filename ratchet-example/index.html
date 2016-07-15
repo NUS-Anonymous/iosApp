@@ -91,7 +91,8 @@
 
         var ua = 'UA-80829507-1';
                 //'{'storage': 'none','clientId': device.uuid}'
-            ga('create', ua, 'chrome');
+            ga('create', ua, {'storage':'none','clientId':device.uuid});
+            ga('set','checkProtocolTask',null);
             ga('send', 'event', 'AppUsage', 'emergencyclick', 'oneclick');
             ga('send', 'screenview', {
               'appName': 'myAppName',
@@ -108,12 +109,14 @@
 
     var ua = 'UA-80829507-1';
             //'{'storage': 'none','clientId': device.uuid}'
-        ga('create', ua, 'chrome');
+        ga('create', ua, {'storage':'none','clientId':device.uuid});
+            ga('set','checkProtocolTask',null);
         ga('send', 'event', 'AppUsage', 'homeclick', 'oneclick');
         ga('send', 'screenview', {
           'appName': 'UTR',
           'screenName': 'RA on Duty'
         });
+        alert(device.uuid);
         alert("sent RA on Duty Stats");
     }
     if (currentpage.indexOf("events") > -1){
@@ -124,7 +127,8 @@
 
     var ua = 'UA-80829507-1';
             //'{'storage': 'none','clientId': device.uuid}'
-        ga('create', ua, 'chrome');
+        ga('create', ua, {'storage':'none','clientId':device.uuid});
+            ga('set','checkProtocolTask',null);
         ga('send', 'event', 'AppUsage', 'eventsclick', 'oneclick');
         ga('send', 'screenview', {
           'appName': 'UTR',
