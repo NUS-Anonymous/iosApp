@@ -20,7 +20,6 @@
     <!-- Include the compiled Ratchet JS -->
     <script src="./js/ratchet.js"></script>
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/function.js"></script>
   </head>
   <body>
         <!-- Make sure all your bars are the first things in your <body> -->
@@ -122,7 +121,7 @@ window.addEventListener('push', checkPage);
     </script>
     <!----------------Footer nav Bar--->
       <nav class="bar bar-tab">
-          <a class="tab-item" href="home.html" >
+          <a class="tab-item" href="home.html" data-transition="slide-in-left">
             <span class="icon icon-home"></span>
             <span class="tab-label">RA on DUTY</span>
           </a>
@@ -130,7 +129,7 @@ window.addEventListener('push', checkPage);
             <span class="icon icon-person"></span>
             <span class="tab-label">Emergency</span>
           </a>
-          <a class="tab-item" href="events.html" >
+          <a class="tab-item" href="events.html" data-transition="slide-in">
             <span class="icon icon-star-filled"></span>
             <span class="tab-label">Events</span>
           </a>
