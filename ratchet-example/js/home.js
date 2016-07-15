@@ -4,7 +4,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','analytics.js','ga');
 
 var ua = 'UA-80829507-1';
-    ga('create', ua, {'storage': 'none','clientId': device.uuid});
+    ga('create', ua, 'chrome');
     ga('send', 'event', 'AppUsage', 'click', 'oneclick');
     ga('send', 'screenview', {
       'appName': 'myAppName',
